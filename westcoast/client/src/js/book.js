@@ -151,19 +151,23 @@ async function init() {
   // Auth init
   const userId = getLoggedInUserId();
   if (userId) {
-    const customer = await getCustomerById(userId);
-    setAuthUiState(true, customer.email);
+    try {
+      const customer = await getCustomerById(userId);
+      setAuthUiState(true, customer.email);
 
-    // Prefill booking fields
-    showPanel("booking");
+      showPanel("booking");
 
-    qs("#customerName").value =
-      customer.name && customer.name.trim() ? customer.name : DEMO_NAME;
-    qs("#billingAddress").value = customer.billingAddress ?? "";
-    qs("#customerEmail").value = customer.email ?? DEMO_EMAIL;
-    qs("#mobile").value = customer.mobile ?? "";
-
-    showPanel("booking");
+      qs("#customerName").value =
+        customer.name && customer.name.trim() ? customer.name : DEMO_NAME;
+      qs("#billingAddress").value = customer.billingAddress ?? "";
+      qs("#customerEmail").value = customer.email ?? DEMO_EMAIL;
+      qs("#mobile").value = customer.mobile ?? "";
+    } catch {
+      // Stored user id is stale (customer deleted) -> reset session
+      setLoggedInUserId(null);
+      setAuthUiState(false);
+      showPanel("login");
+    }
   } else {
     setAuthUiState(false);
     showPanel("login");
