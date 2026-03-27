@@ -1,0 +1,124 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "JavaScript Grund",
+      "courseNumber": "JS-101",
+      "days": 3,
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
+      "imageUrl": "./assets/images/javaScriptGrund.png",
+      "plannedStartDate": "2026-04-13",
+      "priceSek": 12900
+    },
+    {
+      "id": "2",
+      "title": "JavaScript Avancerad",
+      "courseNumber": "JS-201",
+      "days": 4,
+      "deliveryModes": [
+        "classroom"
+      ],
+      "imageUrl": "./assets/images/javaScriptAdv.png",
+      "plannedStartDate": "2026-05-04",
+      "priceSek": 16900
+    },
+    {
+      "id": "3",
+      "title": "/assets/images/TypeScript för Webben.png",
+      "courseNumber": "TS-101",
+      "days": 2,
+      "deliveryModes": [
+        "distance"
+      ],
+      "imageUrl": "https://picsum.photos/seed/ts101/800/450",
+      "plannedStartDate": "2026-04-27",
+      "priceSek": 9900
+    },
+    {
+      "id": "4",
+      "title": "Frontend Arkitektur",
+      "courseNumber": "FE-301",
+      "days": 3,
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
+      "imageUrl": "./assets/images/Frontend.png",
+      "plannedStartDate": "2026-06-01",
+      "priceSek": 14900
+    },
+    {
+      "id": "5",
+      "title": "REST & API Design",
+      "courseNumber": "API-201",
+      "days": 2,
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
+      "imageUrl": "./assets/images/restAPIDesign.png",
+      "plannedStartDate": "2026-05-18",
+      "priceSek": 10900
+    },
+    {
+      "id": "6",
+      "title": "Web3 Intro",
+      "courseNumber": "W3-101",
+      "days": 2,
+      "deliveryModes": [
+        "distance"
+      ],
+      "imageUrl": "./assets/images/web3Intro.png",
+      "plannedStartDate": "2026-06-15",
+      "priceSek": 11900
+    },
+    {
+      "id": "7",
+      "title": "html och css course",
+      "courseNumber": "htcss-101",
+      "days": 2,
+      "deliveryModes": [
+        "distance"
+      ],
+      "imageUrl": "./assets/images/htmlcss.png",
+      "plannedStartDate": "2026-07-13",
+      "priceSek": 13900
+    },
+    {
+      "id": "8",
+      "title": "TypeScript intro",
+      "courseNumber": "TS-102",
+      "days": 2,
+      "deliveryModes": [
+        "distance with live instructor and 5 onsite meetings"
+      ],
+      "imageUrl": "./assets/images/typeScriptintro.png",
+      "plannedStartDate": "2026-07-01",
+      "priceSek": 11900
+    }
+  ],
+  "customers": [
+    {
+      "email": "demo@x.se",
+      "password": "123",
+      "name": "Demo Kund",
+      "billingAddress": "Demo gatan 1",
+      "mobile": "0701234567",
+      "id": "MFNtPjw87mw"
+    }
+  ],
+  "bookings": [
+    {
+      "courseId": "1",
+      "customerId": "MFNtPjw87mw",
+      "deliveryMode": "distance",
+      "date": "2026-04-13",
+      "createdAt": "2026-03-23T00:00:00Z",
+      "id": "J_3Uw3NnGzM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

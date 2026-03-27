@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Westcoast Education</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header
+      class="container"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      "
+    >
+      <div>
+        <h1>Westcoast Education</h1>
+        <p class="muted">Kurser</p>
+      </div>
+
+      <nav>
+        <a href="./admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="courseGrid" class="grid" aria-live="polite"></section>
+      <p id="status" class="muted"></p>
+    </main>
+
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>

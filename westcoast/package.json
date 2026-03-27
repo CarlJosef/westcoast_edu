@@ -1,0 +1,21 @@
+{
+  "name": "westcoast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api": "json-server --watch db/db.json --port 3001",
+    "test": "vitest",
+    "ts:check": "tsc -p client/src/ts/tsconfig.json --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "json-server": "^1.0.0-beta.14",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}

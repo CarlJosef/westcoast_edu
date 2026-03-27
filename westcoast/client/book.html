@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boka kurs</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="container">
+      <a href="./index.html" class="muted">← Tillbaka</a>
+      <h1 id="pageTitle">Boka kurs</h1>
+      <p id="courseTitle" class="muted"></p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="content">
+          <h2>1) Konto</h2>
+
+          <div id="authStatus" class="muted"></div>
+
+          <div
+            class="toolbar"
+            style="display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0"
+          >
+            <button id="btnShowRegister" type="button">Skapa konto</button>
+            <button id="btnShowLogin" type="button">Logga in</button>
+            <button id="btnShowBooking" type="button">Boka kurs</button>
+            <button id="logoutBtn" type="button" style="display: none">
+              Logga ut
+            </button>
+          </div>
+
+          <div id="panelRegister" class="panel" style="display: none">
+            <div class="title">Skapa konto</div>
+
+            <form id="registerForm">
+              <label class="muted" for="regEmail">E-post</label>
+              <input id="regEmail" type="email" required />
+
+              <label class="muted" for="regPassword">Lösenord</label>
+              <input id="regPassword" type="password" required />
+
+              <button type="submit" style="margin-top: 10px">
+                Skapa konto
+              </button>
+              <p id="registerMsg" class="muted"></p>
+            </form>
+          </div>
+
+          <div id="panelLogin" class="panel" style="display: none">
+            <div class="title">Logga in</div>
+
+            <form id="loginForm">
+              <label class="muted" for="loginEmail">E-post</label>
+              <input id="loginEmail" type="email" required />
+
+              <label class="muted" for="loginPassword">Lösenord</label>
+              <input id="loginPassword" type="password" required />
+
+              <button type="submit" style="margin-top: 10px">Logga in</button>
+              <p id="loginMsg" class="muted"></p>
+            </form>
+          </div>
+
+          <p id="authMsg" class="muted"></p>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 16px">
+        <div class="content">
+          <h2>2) Kunduppgifter + bokning</h2>
+
+          <p id="bookingLockedMsg" class="muted">
+            Logga in eller skapa ett konto för att kunna fylla i kunduppgifter
+            och boka kursen.
+          </p>
+          <div id="panelBooking" style="display: none">
+            <form id="bookingForm" class="formGrid">
+              <div class="field">
+                <label class="muted" for="customerName">Kundnamn</label>
+                <input id="customerName" type="text" required />
+              </div>
+
+              <div class="field">
+                <label class="muted" for="billingAddress"
+                  >Faktureringsadress</label
+                >
+                <input id="billingAddress" type="text" required />
+              </div>
+
+              <div class="field">
+                <label class="muted" for="customerEmail">E-post</label>
+                <input id="customerEmail" type="email" required />
+              </div>
+
+              <div class="field">
+                <label class="muted" for="mobile">Mobilnummer</label>
+                <input id="mobile" type="tel" required />
+              </div>
+
+              <div class="field">
+                <label class="muted" for="deliveryMode">Genomförande</label>
+                <select id="deliveryMode" required></select>
+              </div>
+
+              <div class="field">
+                <label class="muted" for="plannedDate"
+                  >Datum (planerat startdatum)</label
+                >
+                <input id="plannedDate" type="date" required />
+              </div>
+
+              <div class="field full">
+                <button id="bookBtn" type="submit">Boka kurs</button>
+                <p id="bookingMsg" class="muted"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <p id="status" class="muted"></p>
+
+      <script type="module" src="./src/js/book.js"></script>
+    </main>
+  </body>
+</html>

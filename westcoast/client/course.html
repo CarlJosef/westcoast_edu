@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kursdetalj</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <header class="container">
+    <a href="./index.html" class="muted">← Tillbaka</a>
+    <h1 id="title">Kurs</h1>
+    <p id="meta" class="muted"></p>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <img id="image" alt="" />
+      <div class="content">
+        <div class="badges" id="modes"></div>
+        <div class="muted" id="startDate"></div>
+        <div class="muted" id="price"></div>
+        <a id="bookLink" href="./book.html">Boka</a>
+      </div>
+    </article>
+
+    <p id="status" class="muted"></p>
+  </main>
+
+  <script type="module" src="./src/js/course.js"></script>
+</body>
+</html>

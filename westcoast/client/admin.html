@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header
+      class="container"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      "
+    >
+      <div>
+        <h1>Admin</h1>
+        <p class="muted">Skapa kurser & se bokade kunder</p>
+      </div>
+      <a href="./index.html" class="muted">← Tillbaka</a>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="content">
+          <h2>Skapa kurs</h2>
+          <form id="createCourseForm" class="formGrid">
+            <div class="field">
+              <label class="muted" for="title">Kurstitel</label>
+              <input id="title" type="text" required />
+            </div>
+
+            <div class="field">
+              <label class="muted" for="courseNumber">Kursnummer</label>
+              <input id="courseNumber" type="text" required />
+            </div>
+
+            <div class="field">
+              <label class="muted" for="days">Antal dagar</label>
+              <input id="days" type="number" min="1" required />
+            </div>
+
+            <div class="field">
+              <label class="muted" for="priceSek">Kostnad (SEK)</label>
+              <input id="priceSek" type="number" min="0" required />
+            </div>
+
+            <div class="field full">
+              <button type="submit">Skapa</button>
+              <p id="createMsg" class="muted"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 16px">
+        <div class="content">
+          <h2>Bokade kunder per kurs</h2>
+
+          <div class="field">
+            <label class="muted" for="courseSelect">Välj kurs</label>
+            <select id="courseSelect"></select>
+          </div>
+
+          <div
+            id="bookingsList"
+            style="display: grid; gap: 10px; margin-top: 10px"
+          ></div>
+          <p id="status" class="muted"></p>
+        </div>
+      </section>
+
+      <script type="module" src="./src/js/admin.js"></script>
+    </main>
+  </body>
+</html>
+
