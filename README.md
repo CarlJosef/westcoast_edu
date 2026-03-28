@@ -1,5 +1,11 @@
 # Westcoast Education
 
+---
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,ts,nodejs,vitest,vscode&perline=12)](https://skillicons.dev)
+
+---
+
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES202x-yellow)
@@ -10,7 +16,21 @@
 
 ---
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,ts,nodejs,vitest,vscode&perline=12)](https://skillicons.dev)
+## Meny
+
+- [Funktionalitet](#funktionalitet)
+- [Teknik](#teknik)
+- [Kör projektet](#kör-projektet-viktigt-stå-i-westcoast)
+- [Demo credentials](#demo-credentials)
+- [VG-spår: TypeScript + TDD](#vg-spår-typescript--tdd-synligt-för-läraren)
+- [Kvalitetscheck](#kvalitetscheck-sluttest)
+- [Vanliga endpoints](#vanliga-endpoints-api)
+
+---
+
+## Screenshot
+
+![App screenshot](westcoast/docs/screenshot.png)
 
 ---
 
