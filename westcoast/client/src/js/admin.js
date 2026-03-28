@@ -127,6 +127,9 @@ async function init() {
         courseNumber,
         days,
         priceSek,
+        deliveryModes: ["distance"],
+        imageUrl: "./assets/images/newcource.png",
+        plannedStartDate: new Date().toISOString().slice(0, 10),
       });
       createMsg.textContent = `Skapad: ${created.title}`;
 

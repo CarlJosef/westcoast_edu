@@ -73,7 +73,9 @@ function renderCustomerRow(customer: Customer, booking: Booking): string {
 }
 
 async function loadBookingsForCourse(courseId: string): Promise<Booking[]> {
-  return httpGet<Booking[]>(`/bookings?courseId=${encodeURIComponent(courseId)}`);
+  return httpGet<Booking[]>(
+    `/bookings?courseId=${encodeURIComponent(courseId)}`,
+  );
 }
 
 async function loadCustomer(customerId: string): Promise<Customer> {
@@ -96,8 +98,12 @@ async function refreshBookingList(): Promise<void> {
     return;
   }
 
-  const customers = await Promise.all(bookings.map(b => loadCustomer(String(b.customerId))));
-  const html = bookings.map((b, i) => renderCustomerRow(customers[i], b)).join("");
+  const customers = await Promise.all(
+    bookings.map((b) => loadCustomer(String(b.customerId))),
+  );
+  const html = bookings
+    .map((b, i) => renderCustomerRow(customers[i], b))
+    .join("");
   list.innerHTML = html;
   status.textContent = "";
 }
@@ -110,13 +116,17 @@ async function init(): Promise<void> {
   const courses = await loadCourses();
 
   select.innerHTML = courses
-    .map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.title)} (${escapeHtml(c.courseNumber)})</option>`)
+    .map(
+      (c) =>
+        `<option value="${escapeHtml(c.id)}">${escapeHtml(c.title)} (${escapeHtml(c.courseNumber)})</option>`,
+    )
     .join("");
 
   select.addEventListener("change", () => {
-    refreshBookingList().catch(err => {
+    refreshBookingList().catch((err) => {
       console.error(err);
-      byId<HTMLParagraphElement>("status").textContent = "Kunde inte hämta bokningar.";
+      byId<HTMLParagraphElement>("status").textContent =
+        "Kunde inte hämta bokningar.";
     });
   });
 
@@ -125,17 +135,29 @@ async function init(): Promise<void> {
     createMsg.textContent = "";
 
     const title = (byId<HTMLInputElement>("title").value || "").trim();
-    const courseNumber = (byId<HTMLInputElement>("courseNumber").value || "").trim();
+    const courseNumber = (
+      byId<HTMLInputElement>("courseNumber").value || ""
+    ).trim();
     const days = Number(byId<HTMLInputElement>("days").value);
     const priceSek = Number(byId<HTMLInputElement>("priceSek").value);
 
     try {
-      const created = await httpPost<Course>("/courses", { title, courseNumber, days, priceSek });
+      const created = await httpPost<Course>("/courses", {
+        title,
+        courseNumber,
+        days,
+        priceSek,
+        deliveryModes: ["distance"],
+        imageUrl: "./assets/images/newcource.png",
+      });
       createMsg.textContent = `Skapad: ${created.title}`;
       // reload list
       const updated = await loadCourses();
       select.innerHTML = updated
-        .map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.title)} (${escapeHtml(c.courseNumber)})</option>`)
+        .map(
+          (c) =>
+            `<option value="${escapeHtml(c.id)}">${escapeHtml(c.title)} (${escapeHtml(c.courseNumber)})</option>`,
+        )
         .join("");
     } catch (err) {
       console.error(err);
@@ -146,7 +168,7 @@ async function init(): Promise<void> {
   await refreshBookingList();
 }
 
-init().catch(err => {
+init().catch((err) => {
   console.error(err);
   const status = document.getElementById("status");
   if (status) status.textContent = "Admin kunde inte initiera. Är API:t igång?";

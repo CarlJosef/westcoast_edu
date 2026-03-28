@@ -5,7 +5,10 @@
       "title": "JavaScript Grund",
       "courseNumber": "JS-101",
       "days": 3,
-      "deliveryModes": ["classroom", "distance"],
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
       "imageUrl": "./assets/images/javaScriptGrund.png",
       "plannedStartDate": "2026-04-13",
       "priceSek": 12900
@@ -15,7 +18,9 @@
       "title": "JavaScript Avancerad",
       "courseNumber": "JS-201",
       "days": 4,
-      "deliveryModes": ["classroom"],
+      "deliveryModes": [
+        "classroom"
+      ],
       "imageUrl": "./assets/images/javaScriptAdv.png",
       "plannedStartDate": "2026-05-04",
       "priceSek": 16900
@@ -25,7 +30,9 @@
       "title": "TypeScript för Webben",
       "courseNumber": "TS-101",
       "days": 2,
-      "deliveryModes": ["distance"],
+      "deliveryModes": [
+        "distance"
+      ],
       "imageUrl": "./assets/images/typeScriptWebben.png",
       "plannedStartDate": "2026-04-27",
       "priceSek": 9900
@@ -35,7 +42,10 @@
       "title": "Frontend Arkitektur",
       "courseNumber": "FE-301",
       "days": 3,
-      "deliveryModes": ["classroom", "distance"],
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
       "imageUrl": "./assets/images/Frontend.png",
       "plannedStartDate": "2026-06-01",
       "priceSek": 14900
@@ -45,7 +55,10 @@
       "title": "REST & API Design",
       "courseNumber": "API-201",
       "days": 2,
-      "deliveryModes": ["classroom", "distance"],
+      "deliveryModes": [
+        "classroom",
+        "distance"
+      ],
       "imageUrl": "./assets/images/restAPIDesign.png",
       "plannedStartDate": "2026-05-18",
       "priceSek": 10900
@@ -55,7 +68,9 @@
       "title": "Web3 Intro",
       "courseNumber": "W3-101",
       "days": 2,
-      "deliveryModes": ["distance"],
+      "deliveryModes": [
+        "distance"
+      ],
       "imageUrl": "./assets/images/web3Intro.png",
       "plannedStartDate": "2026-06-15",
       "priceSek": 11900
@@ -65,7 +80,9 @@
       "title": "HTML och CSS",
       "courseNumber": "HTCSS-101",
       "days": 2,
-      "deliveryModes": ["distance"],
+      "deliveryModes": [
+        "distance"
+      ],
       "imageUrl": "./assets/images/htmlcss.png",
       "plannedStartDate": "2026-07-13",
       "priceSek": 13900
@@ -75,7 +92,9 @@
       "title": "TypeScript intro",
       "courseNumber": "TS-102",
       "days": 2,
-      "deliveryModes": ["distance with live instructor and 5 onsite meetings"],
+      "deliveryModes": [
+        "distance with live instructor and 5 onsite meetings"
+      ],
       "imageUrl": "./assets/images/typeScriptintro.png",
       "plannedStartDate": "2026-07-01",
       "priceSek": 11900
@@ -89,7 +108,56 @@
       "name": "Demo Kund",
       "billingAddress": "Demo gatan 1",
       "mobile": "0701234567"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "rsUMf3xHih8"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "nlekw5UXO-k"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "UFK4VmxxN3w"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "QrLVnZ0Vc5U"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "KZ4XePp85r0"
+    },
+    {
+      "email": "demo@westcoast.se",
+      "password": "demo123",
+      "name": "Bo Bov",
+      "billingAddress": "",
+      "mobile": "",
+      "id": "mE0PJtjKHwc"
     }
   ],
-  "bookings": []
+  "bookings": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

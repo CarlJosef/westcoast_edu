@@ -120,7 +120,12 @@ async function init() {
   const course = await httpGet(`/courses/${encodeURIComponent(courseId)}`);
   qs("#courseTitle").textContent = `${course.title} (${course.courseNumber})`;
 
-  const modes = Array.isArray(course.deliveryModes) ? course.deliveryModes : [];
+  const modes = Array.isArray(course.deliveryModes)
+    ? course.deliveryModes
+    : typeof course.deliveryModes === "string" && course.deliveryModes.trim()
+      ? [course.deliveryModes.trim()]
+      : ["distance"];
+
   fillDeliveryModes(modes);
 
   qs("#plannedDate").value = course.plannedStartDate ?? "";
@@ -163,7 +168,7 @@ async function init() {
       qs("#customerEmail").value = customer.email ?? DEMO_EMAIL;
       qs("#mobile").value = customer.mobile ?? "";
     } catch {
-      // Stored user id is stale (customer deleted) -> reset session
+      // Stored user id is stale (customer deleted) --> reset session
       setLoggedInUserId(null);
       setAuthUiState(false);
       showPanel("login");

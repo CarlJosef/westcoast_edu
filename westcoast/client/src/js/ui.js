@@ -12,12 +12,14 @@ export function renderCourseCard(course) {
   const title = escapeHtml(course.title);
   const courseNumber = escapeHtml(course.courseNumber);
   const days = escapeHtml(course.days);
-  const start = escapeHtml(course.plannedStartDate);
+  const start = escapeHtml(course.plannedStartDate ?? "-");
   const price = escapeHtml(course.priceSek);
-  const img = escapeHtml(course.imageUrl || "");
+  const img = escapeHtml(course.imageUrl ?? "./assets/images/newcource.png");
   const modes = Array.isArray(course.deliveryModes) ? course.deliveryModes : [];
 
-  const badges = modes.map(m => `<span class="badge">${escapeHtml(m)}</span>`).join("");
+  const badges = modes
+    .map((m) => `<span class="badge">${escapeHtml(m)}</span>`)
+    .join("");
 
   return `
     <article class="card">
