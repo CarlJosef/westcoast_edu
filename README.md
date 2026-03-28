@@ -18,13 +18,13 @@
 
 ## Meny
 
-- [Funktionalitet](#funktionalitet)
-- [Teknik](#teknik)
-- [Kör projektet](#kör-projektet-viktigt-stå-i-westcoast)
-- [Demo credentials](#demo-credentials)
-- [VG-spår: TypeScript + TDD](#vg-spår-typescript--tdd-synligt-för-läraren)
-- [Kvalitetscheck](#kvalitetscheck-sluttest)
-- [Vanliga endpoints](#vanliga-endpoints-api)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [How to Run](#how-to-run)
+- [Demo Credentials](#demo-credentials)
+- [VG Track: TypeScript + TDD](#vg-track-typescript--tdd)
+- [Quality Checklist](#quality-checklist)
+- [Common API Endpoints](#common-api-endpoints)
 
 ---
 
@@ -34,88 +34,89 @@
 
 ---
 
-En frontend-app för att visa och boka kurser för **Westcoast education**, med ett adminflöde för att skapa nya kurser.
-Projektet använder `json-server` som REST-API och en statisk frontend i HTML/CSS/JS.
+A frontend application for browsing and booking **Westcoast Education** courses, including an admin flow for creating new courses.
+The project uses `json-server` as a REST API and a static frontend built with HTML/CSS/JS.
 
 ---
 
-## Funktionalitet
+## **Features**
 
-### Steg 1, Visa kurser
+### Step 1: Browse courses
 
-- Startsidan listar kurser (bilder, titel, kursnummer, startdatum, pris).
-- Detaljsida visar information om vald kurs.
+- The start page lists courses (image, title, course number, planned start date, price).
+- A course details page shows information about the selected course.
 
-### Steg 2, Bokning + konto
+### Step 2: Booking & account
 
-- Bokningssida nås via `book.html?courseId=<id>`.
-- Skapa konto / logga in.
-- Genomför bokning (sparas i API:t).
+- The booking page is accessed via `book.html?courseId=<id>`.
+- Create an account / log in.
+- Complete a booking (stored via the API).
 
 ### Admin
 
-- Admin kan skapa nya kurser.
-- Nya kurser får alltid:
-  - standardbild: `./assets/images/newcource.png`
-  - startdatum: dagens datum (YYYY-MM-DD)
-  - standard-genomförande: `distance`
-- UI har fallback så inga trasiga bilder och inga `undefined` visas.
+- Admin can create new courses.
+- Newly created courses always get an:
+  - default image: `./assets/images/newcource.png`
+  - planned start date: today (YYYY-MM-DD)
+  - default delivery mode: `distance`
+
+The UI includes fallbacks so there are no broken images and no `undefined` values shown.
 
 ---
 
-## Teknik
+## Tech Stack
 
 - Frontend: **HTML**, **CSS**, **JavaScript (ES Modules)**
-- TS/VG-spår: **TypeScript** (validering + tester)
+- VG track: **TypeScript** (validation + tests)
 - API: **json-server**
-- Tester: **Vitest**
+- Tests: **Vitest**
 
 ---
 
-## Kör projektet (viktigt: stå i `westcoast\`) annars får du error.
+## **How to Run**
 
-### 1) Installera beroenden enligt instruktionen
+> Important: run commands from the **`westcoast\`** folder, otherwise you may get errors.
 
-**Kör i mappen:**
+### 1) Install dependencies
 
-`H:\<mappnamn>\<mapp>\<mapp>\<mapp>\westcoast_edu\westcoast`
+Run in: `H:\<path>\westcoast_edu\westcoast`
 
-```bash eller powershell7
+```bash
 npm install
 ```
 
 ---
 
-### 2) Starta API
+### 2) Start the API
 
-- **npm run api**
+- Run: **`npm run api`**
 
----
+#### API URL
 
-## API kör på
+- [http://localhost:3001](http://localhost:3001)
 
-    - [API](http://localhost:3001)
+### 3) Start the frontend
 
----
+- Open the frontend in a browser (VS Code Live Server recommended):
+  - **`client/index.html`**
 
-### 3) Starta frontend
+### 4) Run tests and TypeScript check
 
-- Öppna filerna i webbläsare\*\* (via Live Server i VS Code eller direkt i browsern):
-- kör **client/index.html**
+- Run: **`npm test`**
+- Run: **`npm run ts:check`**
 
-### 4) Kör tester och TS-check
+## Other and For info is all credentials only in demo, no **REAL**
 
-- npm test
-- npm run ts:check
-
-## övrigt
-
-- Demo credentials --> E-post: demo@westcoast.se and Lösenord: demo123
+- Demo credentials:
+  - Email: **`demo@westcoast.se`**
+  - Password: **`demo123`**
 
 ---
 
-- Inga console errors
-- Inga trasiga bilder (fallback finns)
-- Navigation fungerar (Start/Admin)
-- Admin-create skapar kurser med komplett data
-- Booking-flöde fungerar: skapa konto → logga in → boka → logga ut
+## Quality Checklist
+
+- No console errors
+- No broken images (fallbacks implemented)
+- Navigation works (Start/Admin)
+- Admin course creation produces complete course data
+- Booking flow works: create account → log in → book → log out
